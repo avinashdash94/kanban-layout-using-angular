@@ -15,18 +15,45 @@
         </div>
 
         <div class="board-wrapper">
-            <div class="board-columns">
+            <div class="board-columns"cdkDropListGroup>
                 <div class="board-column">
+                    <div class="column-title">
+                        Ideas
+                    </div>
+
+                    <div class="tasks-container"
+                    cdkDropList
+                    [cdkDropListData]="todo"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)">
+                        <div class="task" *ngFor="let item of todo" cdkDrag>
+                            {{item}}
+                        </div>    
+                    </div>
 
                 </div>
 
                 <div class="board-column">
+                    <div class="column-title">
+                        Research
+                    </div>
+
 
                 </div>
 
                 <div class="board-column">
+                    <div class="column-title">
+                        Todo
+                    </div>
 
                 </div>
+
+                <div class="board-column">
+                    <div class="column-title">
+                        Done
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
