@@ -41,16 +41,17 @@ export class MainViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  // todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  // done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
 
   drop(event: CdkDragDrop<string[]>) {
 
-    if (event.previousContainer === event.container) { console.log('1');
+    if (event.previousContainer === event.container) { 
+      //console.log('1');
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log('2');
+      //console.log('2');
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
